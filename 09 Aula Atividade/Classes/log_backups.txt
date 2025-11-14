@@ -1,0 +1,33 @@
+# --- CENÁRIO 1: Sucesso e Falha Inicial (Log Original) ---
+2024-09-17 01:00:00 - INFO - Backup iniciado.
+2024-09-17 01:05:00 - INFO - Backup concluído com sucesso.
+2024-09-17 03:00:00 - INFO - Backup iniciado.
+2024-09-17 03:05:00 - ERROR - Falha ao realizar o backup. # <--- ALERTA: FALHA
+2024-09-17 05:00:00 - INFO - Backup iniciado. # Último início 03:00. Intervalo 2h 00m (OK).
+2024-09-17 05:05:00 - INFO - Backup concluído com sucesso.
+
+# --- CENÁRIO 2: Atraso de Execução ---
+2024-09-17 07:00:00 - INFO - Backup iniciado. # Último início 05:00. Intervalo 2h 00m (OK).
+2024-09-17 07:10:00 - INFO - Backup concluído com sucesso.
+2024-09-17 09:30:00 - INFO - Backup iniciado. # Último início 07:00. Intervalo 2h 30m (Atraso) # <--- ALERTA: ATRASO
+2024-09-17 09:35:00 - INFO - Backup concluído com sucesso.
+
+# --- CENÁRIO 3: Falha Dupla e Recuperação Rápida ---
+2024-09-17 11:35:00 - INFO - Backup iniciado. # Último início 09:30. Intervalo 2h 05m (Atraso) # <--- ALERTA: ATRASO
+2024-09-17 11:40:00 - ERROR - Falha ao realizar o backup. # <--- ALERTA: FALHA
+2024-09-17 11:45:00 - INFO - Backup iniciado. # Último início 11:35. Intervalo 0h 10m (OK).
+2024-09-17 11:50:00 - ERROR - Falha ao realizar o backup. # <--- ALERTA: FALHA
+2024-09-17 12:00:00 - INFO - Backup iniciado. # Último início 11:45. Intervalo 0h 15m (OK).
+2024-09-17 12:05:00 - INFO - Backup concluído com sucesso.
+
+# --- CENÁRIO 4: Longo Período de Inatividade (Atraso Extremo) ---
+2024-09-17 18:00:00 - INFO - Backup iniciado. # Último início 12:00. Intervalo 6h 00m (Atraso) # <--- ALERTA: ATRASO
+2024-09-17 18:15:00 - INFO - Backup concluído com sucesso.
+
+# --- CENÁRIO 5: Execução no Limite ---
+2024-09-17 20:15:00 - INFO - Backup iniciado. # Último início 18:00. Intervalo 2h 15m (Atraso) # <--- ALERTA: ATRASO
+2024-09-17 20:20:00 - INFO - Backup concluído com sucesso.
+
+# --- CENÁRIO 6: Execução no Final do Dia ---
+2024-09-17 23:00:00 - INFO - Backup iniciado. # Último início 20:15. Intervalo 2h 45m (Atraso) # <--- ALERTA: ATRASO
+2024-09-17 23:05:00 - INFO - Backup concluído com sucesso.

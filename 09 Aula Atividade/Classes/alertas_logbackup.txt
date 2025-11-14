@@ -1,0 +1,9 @@
+ERRO FATAL: Não foi possível ler o arquivo de log: logbackup.log. logbackup.log (O sistema não pode encontrar o arquivo especificado)
+ERRO FATAL: Não foi possível ler o arquivo de log: log_backups.log. log_backups.log (O sistema não pode encontrar o arquivo especificado)
+Alerta: Falha no backup em 2024-09-17 03:05:00.
+Alerta: Falha no backup em 2024-09-17 03:05:00.
+Alerta: Falha no backup em 2024-09-17 11:40:00.
+Alerta: Falha no backup em 2024-09-17 11:50:00.
+Alerta: Falha no backup em 2024-09-17 03:05:00.
+Alerta: Falha no backup em 2024-09-17 11:40:00.
+Alerta: Falha no backup em 2024-09-17 11:50:00.
